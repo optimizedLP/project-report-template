@@ -148,34 +148,26 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+        <h2 id="networkflow"> Network Flow </h2>
+          <p> A network flow $G=(V,E)$ is a graph where each edge has a <i> capacity </i> and a <i> flow</i>. Two vertices in the network flow are designated to be the source vertex $s$ and the sink vertex $t$, respectively. The goal is to find the maximum amount of flow that could be delivered from $s$ to $t$, while satisfying the following constraints. </p>
+          <p>
+            <ul>
+              <li><b>Capacity constraint: </b> Each edge $(u,v)\in E$ has a nonnegative capacity $c(u,v)$ that must be greater than or equal to its flow $f(u,v)$.
+                $$0\leq f(u,v)\leq c(u,v)$$
+              </li>
+              <li><b>Flow conservation: </b> For all vertices $u\in V-{s,t}$, we require that the inflow of the vertex is equal to its outflow.
+                $$\sum_{v\in V}f(v,u)=\sum_{v\in V}f(u,v)$$
+              But $s$ can have unlimited inflow, and $t$ can have unlimited outflow.
+              </li>
+            </ul>
+          </p>
+          <p> The flow of the network is the flow that can be sent through some path from $s$ to $t$, which, by conservation of flow, is equal to the inflow of $s$ or the outflow of $t$.  An $s/t$ cut is a partitioning of the vertices into two disjoint subsets such that one contains $s$ and the other contains $t$. The value of an $s/t$ cut is the total flow of the edges passing through the cut.
+          </p>
+          <p>
+          As stated by the <b> max-flow min-cut theorem</b>, the maximum amount of flow passing from the source to the sink is equivalent to the net flow of the edges in the minimum cut. So by solving the max-flow problem, we directly solve the min-cut problem as well. We will discuss algorithms for finding the max-flow or min-cut in a later section.
+          </p> 
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
+        </div>
 </div>
 </div>
 </section>
